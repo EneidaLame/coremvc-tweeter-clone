@@ -1,0 +1,38 @@
+﻿@model SocialApp.Models.Post
+@{
+    Layout = "_TweeterLayout";
+}
+
+<div class="row">
+
+    <div class="col-sm-2">
+        <!-- Add logged in user profile -->
+    </div>
+
+    <div class="col-sm-8">
+        <form asp-action="AddPost" class="form-horizontal">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label class="control-label">Tweet</label>
+                <input asp-for="Content" class="form-control" />
+                <span asp-validation-for="Content" class="text-danger"></span>
+            </div>
+        </form>
+
+
+        @foreach (var Post in ViewBag.Posts)
+        {
+            <div class="media" style="padding-top:5px;">
+                <img src="https://via.placeholder.com/40" class="mr-3" alt="...">
+                <div class="media-body">
+                    @Post.Content
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="col-sm-2">
+        <!-- Add latest, most popular -->
+    </div>
+</div>
+

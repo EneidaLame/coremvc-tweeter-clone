@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "My Posts";
+}
+
+<div class="text-center">
+    <ul>
+        @foreach (var Post in ViewBag.Posts)
+        {
+            <li>@Post.Content</li>
+        }
+    </ul>
+</div>

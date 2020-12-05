@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "_TweeterLayout";
+}
+
+<div class="row">
+
+    <div class="col-sm-2">
+        <!-- Add logged in user profile -->
+    </div>
+
+    <div class="col-sm-8">
+
+        <h3>Search: @ViewBag.searchStr</h3>
+
+        @foreach (var Post in ViewBag.Posts)
+        {
+            <div class="media" style="padding-top:5px;">
+                <img src="https://via.placeholder.com/40" class="mr-3" alt="...">
+                <div class="media-body">
+                    @Post.Content
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="col-sm-2">
+        <!-- Add latest, most popular -->
+    </div>
+</div>
